@@ -36,7 +36,6 @@ const About = () => {
             </p>
           </div>
         </div>
-
         <div className="bg-yellow-500 text-black py-8 px-6 mt-12 rounded-lg shadow-lg">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             Why Choose Us?
