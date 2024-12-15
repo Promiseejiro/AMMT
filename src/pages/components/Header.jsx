@@ -1,43 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
   return (
-    <header class="bg-black text-white">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <a href="#" class="text-2xl font-bold text-yellow-500">
-                <img src={Logo} alt="logo" width={50}/>
+    <header className="relative bg-black text-white">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+        <a href="/" className="text-2xl font-bold text-yellow-500">
+          <img src={Logo} alt="logo" width={50} />
+        </a>
+
+        <nav className="hidden md:flex space-x-8">
+          <a href="/" className="text-gray-300 hover:text-yellow-500 transition">Home</a>
+          <a href="/about" className="text-gray-300 hover:text-yellow-500 transition">About</a>
+          {/* <a href="#" className="text-gray-300 hover:text-yellow-500 transition">Services</a> */}
+          <a href="/contact" className="text-gray-300 hover:text-yellow-500 transition">Contact</a>
+        </nav>
+
+        <Link
+          to="/apply"
+          className="hidden md:inline-block bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded transition"
+        >
+          Join Us
+        </Link>
+
+        <button
+          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+          aria-label="Toggle menu"
+          onClick={() => setMobileNavOpen(!mobileNavOpen)}
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fillRule="evenodd"
+              d="M3 5h14a1 1 0 110 2H3a1 1 0 010-2zm0 5h14a1 1 0 110 2H3a1 1 0 010-2zm0 5h14a1 1 0 110 2H3a1 1 0 010-2z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      {/* Mobile Navigation */}
+      {mobileNavOpen && (
+        <div className="bg-black md:hidden absolute w-full">
+          <nav className="flex flex-col items-center space-y-4 py-4">
+            <a
+              href="/"
+              className="text-gray-300 hover:text-yellow-500 transition"
+              onClick={() => setMobileNavOpen(false)}
+            >
+              Home
             </a>
-
-            <nav class="hidden md:flex space-x-8">
-            <a href="#" class="text-gray-300 hover:text-yellow-500 transition">Home</a>
-            <a href="#" class="text-gray-300 hover:text-yellow-500 transition">About</a>
-            {/* <a href="#" class="text-gray-300 hover:text-yellow-500 transition">Services</a> */}
-            <a href="#" class="text-gray-300 hover:text-yellow-500 transition">Contact</a>
-            </nav>
-
+            <a
+              href="/about"
+              className="text-gray-300 hover:text-yellow-500 transition"
+              onClick={() => setMobileNavOpen(false)}
+            >
+              About
+            </a>
+            <a
+              href="/contact"
+              className="text-gray-300 hover:text-yellow-500 transition"
+              onClick={() => setMobileNavOpen(false)}
+            >
+              Contact
+            </a>
             <Link
-            to="/apply"
-            class="hidden md:inline-block bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded transition"
+              to="/apply"
+              className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded transition"
+              onClick={() => setMobileNavOpen(false)}
             >
-            Join Us
+              Join Us
             </Link>
-
-            <button
-            class="md:hidden text-gray-300 hover:text-white focus:outline-none"
-            aria-label="Toggle menu"
-            >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                fill-rule="evenodd"
-                d="M3 5h14a1 1 0 110 2H3a1 1 0 010-2zm0 5h14a1 1 0 110 2H3a1 1 0 010-2zm0 5h14a1 1 0 110 2H3a1 1 0 010-2z"
-                clip-rule="evenodd"
-                ></path>
-            </svg>
-            </button>
+          </nav>
         </div>
+      )}
     </header>
+
   )
 }
 
