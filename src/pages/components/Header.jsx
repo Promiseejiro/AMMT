@@ -7,15 +7,15 @@ const Header = () => {
   return (
     <header className="relative bg-black text-white">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <a href="/" className="text-2xl font-bold text-yellow-500">
+        <Link to="/" className="text-2xl font-bold text-yellow-500">
           <img src={Logo} alt="logo" width={50} />
-        </a>
+        </Link>
 
         <nav className="hidden md:flex space-x-8">
-          <a href="/" className="text-gray-300 hover:text-yellow-500 transition">Home</a>
-          <a href="/about" className="text-gray-300 hover:text-yellow-500 transition">About</a>
+          <Link to="/" className="text-gray-300 hover:text-yellow-500 transition">Home</Link>
+          <Link to="/about" className="text-gray-300 hover:text-yellow-500 transition">About</Link>
           {/* <a href="#" className="text-gray-300 hover:text-yellow-500 transition">Services</a> */}
-          <a href="/contact" className="text-gray-300 hover:text-yellow-500 transition">Contact</a>
+          <Link to="/contact" className="text-gray-300 hover:text-yellow-500 transition">Contact</Link>
         </nav>
 
         <Link
@@ -43,27 +43,27 @@ const Header = () => {
       {mobileNavOpen && (
         <div className="bg-black md:hidden absolute w-full">
           <nav className="flex flex-col items-center space-y-4 py-4">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-gray-300 hover:text-yellow-500 transition"
               onClick={() => setMobileNavOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="text-gray-300 hover:text-yellow-500 transition"
               onClick={() => setMobileNavOpen(false)}
             >
               About
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="text-gray-300 hover:text-yellow-500 transition"
               onClick={() => setMobileNavOpen(false)}
             >
               Contact
-            </a>
+            </Link>
             <Link
               to="/apply"
               className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded transition"
