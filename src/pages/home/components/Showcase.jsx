@@ -16,8 +16,7 @@ function Showcase() {
             Association of Accredited Management Trainers
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium,
-            perspiciatis neque. Dolorem odit doloribus voluptatibus.
+            Empowering individuals and organizations through world-class management training and development. Join a community committed to excellence, innovation, and impactful leadership.
           </p>
           {/* Become a Member Button */}
           <Link
