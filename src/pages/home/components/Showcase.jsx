@@ -13,10 +13,9 @@ function Showcase() {
       >
         <div className="bg-black bg-opacity-80 w-full flex flex-col justify-center items-center px-6 md:px-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Association of Accredited Management Trainers
-          </h1>
+            Association of Accredited Management Trainers in Nigeria-AAMTN          </h1>
           <p className="text-lg md:text-xl max-w-3xl mb-6">
-            Empowering individuals and organizations through world-class management training and development. Join a community committed to excellence, innovation, and impactful leadership.
+            Redefining management consulting and training beyond accreditation and certification.
           </p>
           {/* Become a Member Button */}
           <Link

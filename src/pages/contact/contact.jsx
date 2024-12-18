@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import toast from "react-hot-toast";
 const Contact = () => {
+  const [isLoading, setIsloading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,9 +22,11 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      setIsloading(true)
       const response = await axios.post(`${import.meta.env.VITE_AAMT_BACKEND}contact`, formData)
       if (response.data.success) {
-        toast.success(response.data.message);
+        toast.success("Contact information sent successfully");
+        setIsloading(false)
       }
     } catch (error) {
       toast.error(error.message)
@@ -89,7 +92,7 @@ const Contact = () => {
             type="submit"
             className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition"
           >
-            Send Message
+            {isLoading ? "Submitting..." : "Send Message"}
           </button>
         </form>
       </div>
