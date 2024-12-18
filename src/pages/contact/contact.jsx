@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 const Contact = () => {
   const [isLoading, setIsloading] = useState(false)
   const [formData, setFormData] = useState({
@@ -94,6 +95,13 @@ const Contact = () => {
           >
             {isLoading ? "Submitting..." : "Send Message"}
           </button>
+          <p className="text-center ">OR</p>
+          <div className="flex items-center justify-center">  <Link
+            to="whatsapp://send?abid=08100774377"
+            className="text-center border hover:border-yellow-600 border-yellow-500 hover:bg-yellow-600 text-yellow-500 hover:text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 w-56 m-auto"
+          >
+            Whatapp
+          </Link></div>
         </form>
       </div>
       <Footer />
